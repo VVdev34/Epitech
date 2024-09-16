@@ -88,21 +88,88 @@
 #    res =  42 ** x
 #print(res)
 
-#Task 2.1
+#Task 2.1 -------------------
 
-punctuation = '''!()-[]{};:'",<>./?@#$%^&*_~'''
+#punctuation = '''!()-[]{};:'",<>./?@#$%^&*_~'''
 
-def palindrome(x):
-    x = str(x)
-    x = x.lower()
+#def palindrome(x):
+#    x = str(x)
+#    x = x.lower()
 
-    for i in x :
-        if i in punctuation:
-            x = x.replace(i,"")
-        x = x.replace (" ","")
-        if len(x) <= 1 and x[0] == x [-1]:
-            return palindrome(x[1:-1])
-    else : 
-        return False 
+#    for i in x :
+#        if i in punctuation:
+#            x = x.replace(i,"")
+#        x = x.replace (" ","")
+
+#    print(x == x[::-1])
     
-palindrome("Was it a car or a cat I saw")
+    
+#palindrome("Kayak")
+
+#Task 2.2 ---------------------
+
+
+def lower(x,y):
+    total = 0
+    for letter in x:
+        total += letter.islower()
+    return total >= y
+
+
+
+def upper(x,y):
+    total = 0
+    for letter in x:
+        total += letter.isupper()
+    return total >= y
+
+
+
+def characters(x,y):
+    total = 0
+    for letter in x:
+        total += len(letter)
+    return total >= y
+
+
+
+
+def special(x,y):
+    symbols = "!@#$%^&*()-+?_=,<>"
+    total = 0
+    for symbol in x:
+        if symbol in symbols:
+            total += 1
+    return total >= y
+    
+
+
+
+def number(x,y):
+    total = 0
+    for number in x:
+        total += number.isdigit()
+    return  total >= y
+
+
+
+
+#Task 3.2 ------------------------
+def check_password(option,x,y):
+  return option(x,y)
+
+print(check_password(lower, "secretpassword", 4))
+print(check_password(special,'secretpassword', 2))
+
+
+
+
+
+
+
+
+
+
+
+
+
