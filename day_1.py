@@ -85,10 +85,10 @@ print (format(b, ('.2f')))
 
 #Task 4.1
 
-#precision = 1
-#for _ in range(30):
-#   print(1/precision)
-#  precision += 2
+precision = 1
+for _ in range(30):
+   print(1/precision)
+  precision += 2
 
 
 
